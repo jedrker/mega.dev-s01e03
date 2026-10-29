@@ -1,0 +1,69 @@
+---
+layout: runbook
+title: '#4471 split · three problems, three tickets'
+owner: Jedrek
+status: open
+reviewed: 2026-10-29
+signature: Jedrek
+---
+
+<script>
+  import ProblemTable from '#lib/kb/ProblemTable.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+
+  const issues = {
+    parser: 'https://github.com/jedrker/mega.dev-s01e03/issues/1',
+    hint: 'https://github.com/jedrker/mega.dev-s01e03/issues/2',
+    oneDayMove: 'https://github.com/jedrker/mega.dev-s01e03/issues/3',
+  };
+</script>
+
+[#4471](/kb/incidents/4471) says one issue with one fix queued. Its own table says otherwise: the
+reports in it come from three different bugs. The parser fix that is queued closes only the first.
+
+<Callout kind="warn">
+Not one issue. Three problems, each with its own ticket. Fixing the parser leaves the other two open.
+</Callout>
+
+## What is in #4471
+
+<ProblemTable ticket={4471} {issues} />
+
+Each report is placed by its tenant (locale and booking form, from the tenant directory) and the
+channel it came in through, with the rules in `#lib/kb/causes`. One-day moves come from
+`desk-notes.json`. The table counts each report id once, so the overlapping pages of the export
+do not count twice.
+
+## The three problems
+
+**`parser`: day and month swap.** The shared parser reads every date month first. Every tenant on
+file writes the day first, so 7 April becomes 4 July. This is the bug #4471 names, and the queued
+fix is for it.
+
+**`hint`: the booking-v3 form asks for the wrong order.** booking-v3 prints `MM/DD/YYYY` under its
+date field. People follow the hint and type the month first; the form then reads the date the
+tenant's way, day first. The result looks like the parser bug, but the parser fix does not touch
+it. Only reports sent through the form of a booking-v3 tenant have this cause.
+
+**`oneDayMove`: the date moves by one day.** These reports say Tuesday became Monday, or that one
+meeting landed on Tuesday in Lisbon and on Monday in Toronto. That is not a swapped month. It
+looks like a date shifted across time zones, and neither of the other fixes covers it.
+
+## Why one ticket hid three bugs
+
+- Triage merges on the subject line alone ([decision 0001](/kb/decisions/0001-dedupe-by-subject)).
+  "Wrong day on the invite" fits all three bugs, so they all landed in #4471.
+- Intake tags a report from the reporter's browser, not from the tenant. A day-first tenant's
+  staff on an `en-US` browser get tagged `hint`, and form reports get tagged `parser`. The table's
+  first line says how many tags are wrong.
+- [Triage: duplicate reports](/kb/triage/dedupe) and decision 0001 have not been reviewed since
+  June 2024. The kb marks both stale.
+
+## What the desk does now
+
+1. Keep #4471 for the `parser` problem only, and link the other two tickets from it.
+2. File new date reports by cause, with the dedupe explorer on the triage page, not by subject.
+3. Do not mark #4471 fixed when the parser fix ships while the other two tickets are open.
+
+<RenderStamp {signature} />

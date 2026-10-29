@@ -34,3 +34,9 @@ Support desk. Decision records: whoever signed them.
 ---
 
 Exported 2026-10-04 from the `support` repo, `apps/kb/` → `src/`.
+
+## #4471 split (MEGA.dev S01E03)
+
+- Page: `src/routes/kb/incidents/4471-split/+page.svx`, counts from `src/lib/kb/ProblemTable.svelte` and `src/lib/kb/problems.ts`.
+- As the desk sees it: `rendered/kb/incidents/4471-split/index.html` (built with `npm install && npm run build`), screenshot in `screenshots/4471-split.png`.
+- Tickets: [#1 parser](https://github.com/jedrker/mega.dev-s01e03/issues/1), [#2 hint](https://github.com/jedrker/mega.dev-s01e03/issues/2), [#3 one-day move](https://github.com/jedrker/mega.dev-s01e03/issues/3).

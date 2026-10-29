@@ -24,7 +24,7 @@
   <strong>{merged.length}</strong> reports merged into #{ticket} ·
   <strong>{groups.length}</strong>
   {groups.length === 1 ? 'problem' : 'problems'} ·
-  intake tagged <strong>{mistagged}</strong> of them as a different problem
+  intake tagged <strong>{mistagged}</strong> of them as the wrong cause
 </p>
 
 <table>
@@ -36,7 +36,7 @@
       <tr class:open={!issues[g.problem]}>
         <td><code>{g.problem}</code></td>
         <td class="what">{WHAT[g.problem]}</td>
-        <td>{g.reports.length}</td>
+        <td>{g.reports.length}{g.filedUnder.length ? '*' : ''}</td>
         <td>{g.tenants}</td>
         <td>{g.firstSeen} → {g.lastSeen}</td>
         <td>
@@ -51,8 +51,17 @@
   </tbody>
 </table>
 
+{#each groups.filter((g) => g.filedUnder.length) as g (g.problem)}
+  <p class="note">
+    * The desk files these {g.reports.length} reports under <code>{g.filedUnder.join(', ')}</code> by tenant, so
+    they are counted there too: {groups.filter((c) => !c.filedUnder.length).length} causes cover all
+    {merged.length} reports.
+  </p>
+{/each}
+
 <style>
   .sum { font-size: 1.1rem; }
+  .note { color: var(--muted); font-size: 0.85em; }
   .what { color: var(--muted); font-size: 0.85em; }
   .open td { background: var(--warn-bg); }
   .open td:last-child { color: var(--warn); font-weight: 600; }

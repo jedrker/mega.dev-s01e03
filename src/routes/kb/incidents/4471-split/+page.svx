@@ -30,10 +30,10 @@ Not one issue. Three problems, each with its own ticket. Fixing the parser leave
 
 <ProblemTable ticket={4471} {issues} />
 
-Each report is placed by its tenant (locale and booking form, from the tenant directory) and the
-channel it came in through, with the rules in `#lib/kb/causes`. One-day moves come from
-`desk-notes.json`. The table counts each report id once, so the overlapping pages of the export
-do not count twice.
+The table counts the way the desk's own table on [#4471](/kb/incidents/4471) does: each report goes
+under the cause its tenant (locale and booking form) and channel give it, with the rules in
+`#lib/kb/causes`, and each report id counts once, so the overlapping pages of the export do not
+count twice. One-day moves come from `desk-notes.json`.
 
 ## The three problems
 

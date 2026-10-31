@@ -1,0 +1,1 @@
+export{n as component}from"../chunks/o4wfslkc.js";

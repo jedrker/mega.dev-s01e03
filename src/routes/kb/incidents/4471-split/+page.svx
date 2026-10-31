@@ -2,8 +2,8 @@
 layout: runbook
 title: '#4471 split · three problems, three tickets'
 owner: Jedrek
-status: open
-reviewed: 2026-10-29
+status: closed
+reviewed: 2026-10-31
 signature: Jedrek
 ---
 
@@ -24,6 +24,10 @@ reports in it come from three different bugs. The parser fix that is queued clos
 
 <Callout kind="warn">
 Not one issue. Three problems, each with its own ticket. Fixing the parser leaves the other two open.
+</Callout>
+
+<Callout>
+Closed. The three tickets are filed, counted and handed to the desk; this commit closes them.
 </Callout>
 
 ## What is in #4471

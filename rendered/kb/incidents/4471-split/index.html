@@ -9,11 +9,11 @@
 		<link href="../../../_app/immutable/chunks/CiqoZ2A1.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/CHfFqfNT.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/DQG8lHS1.js" rel="modulepreload">
-		<link href="../../../_app/immutable/entry/app.BOkr7Ybz.js" rel="modulepreload">
+		<link href="../../../_app/immutable/entry/app.BIizvPPc.js" rel="modulepreload">
 		<link href="../../../_app/immutable/nodes/0.CTf4XHXr.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/DK3Fl9T5.js" rel="modulepreload">
-		<link href="../../../_app/immutable/nodes/5.ei9RfuVf.js" rel="modulepreload">
-		<link href="../../../_app/immutable/chunks/CXTl5jPj.js" rel="modulepreload">
+		<link href="../../../_app/immutable/nodes/5.DTFM-0Pm.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/Bkek3E67.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/DkoUumqI.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/CVBzP17p.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/DcZ9TEUN.js" rel="modulepreload">
@@ -23,8 +23,8 @@
 		<link href="../../../_app/immutable/assets/_page.DsbTgBbZ.css" rel="stylesheet">
   </head>
   <body>
-    <div style="display: contents"><!--[--><!--[--><!--[0--><!--[--><!--[--><!--[-1--><!--[--><div class="kb svelte-e2jw2j"><header><a class="crumb svelte-e2jw2j" href="/kb">support desk · kb</a> <h1 class="svelte-e2jw2j">#4471 split · three problems, three tickets</h1> <p class="meta svelte-e2jw2j"><span>owner <b>Jedrek</b></span> <span class="status open svelte-e2jw2j">open</span> <span class="svelte-e2jw2j">reviewed 2026-10-29 · 0 days ago</span></p></header> <!--[-1--><!--]--> <main><p><a href="/kb/incidents/4471">#4471</a> says one issue with one fix queued. Its own table says otherwise: the
-reports in it come from three different bugs. The parser fix that is queued closes only the first.</p> <aside class="warn svelte-17bri61"><!---->Not one issue. Three problems, each with its own ticket. Fixing the parser leaves the other two open.<!----></aside><!----> <h2>What is in #4471</h2> <p class="sum svelte-1op6c6"><strong>412</strong> reports merged into #4471 · <strong>3</strong> problems ·
+    <div style="display: contents"><!--[--><!--[--><!--[0--><!--[--><!--[--><!--[-1--><!--[--><div class="kb svelte-e2jw2j"><header><a class="crumb svelte-e2jw2j" href="/kb">support desk · kb</a> <h1 class="svelte-e2jw2j">#4471 split · three problems, three tickets</h1> <p class="meta svelte-e2jw2j"><span>owner <b>Jedrek</b></span> <span class="status closed svelte-e2jw2j">closed</span> <span class="svelte-e2jw2j">reviewed 2026-10-31 · -1 days ago</span></p></header> <!--[-1--><!--]--> <main><p><a href="/kb/incidents/4471">#4471</a> says one issue with one fix queued. Its own table says otherwise: the
+reports in it come from three different bugs. The parser fix that is queued closes only the first.</p> <aside class="warn svelte-17bri61"><!---->Not one issue. Three problems, each with its own ticket. Fixing the parser leaves the other two open.<!----></aside><!----> <aside class="note svelte-17bri61"><!---->Closed. The three tickets are filed, counted and handed to the desk; this commit closes them.<!----></aside><!----> <h2>What is in #4471</h2> <p class="sum svelte-1op6c6"><strong>412</strong> reports merged into #4471 · <strong>3</strong> problems ·
   intake tagged <strong>38</strong> of them as the wrong cause</p> <table><thead><tr><th>problem</th><th>what happens</th><th>reports</th><th>tenants</th><th>seen</th><th>ticket</th></tr></thead><tbody><!--[--><tr class="svelte-1op6c6"><td class="svelte-1op6c6"><code>parser</code></td><td class="what svelte-1op6c6">the shared parser reads a day-first date month first: day and month swap</td><td class="svelte-1op6c6">379</td><td class="svelte-1op6c6">11</td><td class="svelte-1op6c6">2026-04-01 → 2026-10-04</td><td class="svelte-1op6c6"><!--[0--><a href="https://github.com/jedrker/mega.dev-s01e03/issues/1">#1</a><!--]--></td></tr><tr class="svelte-1op6c6"><td class="svelte-1op6c6"><code>hint</code></td><td class="what svelte-1op6c6">booking-v3 prints MM/DD/YYYY under its date field; people type month first, the form reads day first</td><td class="svelte-1op6c6">33</td><td class="svelte-1op6c6">3</td><td class="svelte-1op6c6">2026-04-17 → 2026-09-22</td><td class="svelte-1op6c6"><!--[0--><a href="https://github.com/jedrker/mega.dev-s01e03/issues/2">#2</a><!--]--></td></tr><tr class="svelte-1op6c6"><td class="svelte-1op6c6"><code>oneDayMove</code></td><td class="what svelte-1op6c6">the date moves by one day, not a month: Tuesday shows as Monday</td><td class="svelte-1op6c6">5*</td><td class="svelte-1op6c6">5</td><td class="svelte-1op6c6">2026-04-02 → 2026-10-04</td><td class="svelte-1op6c6"><!--[0--><a href="https://github.com/jedrker/mega.dev-s01e03/issues/3">#3</a><!--]--></td></tr><!--]--></tbody></table> <!--[--><p class="note svelte-1op6c6">* The desk files these 5 reports under <code>parser</code> by tenant, so
     they are counted there too: 2 causes cover all
     412 reports.</p><!--]--><!----> <p>The table counts the way the desk’s own table on <a href="/kb/incidents/4471">#4471</a> does: each report goes
@@ -44,16 +44,16 @@ June 2024. The kb marks both stale.</li></ul> <h2>What the desk does now</h2> <o
 			
 			<script>
 				{
-					__sveltekit_1xo4jo9 = {
+					__sveltekit_1mpxu8g = {
 						base: new URL("../../..", location).pathname.slice(0, -1),
-						version: "1793312787594"
+						version: "1793402714418"
 					};
 
 					const element = document.currentScript.parentElement;
 
 					import("../../../_app/immutable/entry/start.DHGSJWrH.js").then(async (kit) => {
-						kit.init(__sveltekit_1xo4jo9);
-						const app = await import("../../../_app/immutable/entry/app.BOkr7Ybz.js");
+						kit.init(__sveltekit_1mpxu8g);
+						const app = await import("../../../_app/immutable/entry/app.BIizvPPc.js");
 						kit.start(app, element, {
 							node_ids: [0, 5],
 							data: [null,null],
